@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hariom's Random Word Picker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            margin-top: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #d9534f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Pick 7 Words Given by Hariom</h2>
+        <p>Click the button below to randomly select 7 words from Hariom's list.</p>
+        <button onclick="pickWords()">Pick 7 Words</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function pickWords() {
+            let words = ["Sabun", "Funny", "Run", "Omay", "Dafa ho", "Nokar", "Naughty", "Nonsense", "Gawar", "Best", "Baby", "Maaza power", "Laat(kick)", "Jhingalala"];
+            let shuffled = words.sort(() => 0.5 - Math.random());
+            let selectedWords = shuffled.slice(0, 7);
+            document.getElementById("result").innerHTML = "Selected Words: " + selectedWords.join(", ");
+        }
+    </script>
+</body>
+</html>
